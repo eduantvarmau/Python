@@ -2,14 +2,13 @@ import os
 
 def openFile(path):
     try:
-        print("Leyendo archivo...")
-        archivo = open(path)
+        file = open(path)
         dataSet = []
-        for linea in archivo:
-            datos = linea.strip().split(",")
-            dataSet.append(datos)
-        archivo.close()
-        print("Archivo leído con éxito.")
+        for linea in file:
+            data = linea.strip().split(",")
+            dataSet.append(data)
+        file.close()
+        print("Archivo encontrado")
         return dataSet
     except IOError as e:
-        print("El archivo no existe. {}".format(e))
+        print("No se encontro el archivo {}".format(e))
